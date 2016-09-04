@@ -3,6 +3,7 @@
   * [Tuples](#tuples)
   * [Named tuples](#named-tuples)
   * [List](#list)
+  * [Bytes] (#bytes)
   * [Set](#set)
   * [Dict](#dict)
   * [Counter](#counter)
@@ -37,6 +38,19 @@ l = [0, 1, 2]
 l.append(1)
 l.sort()
 ```
+
+### Bytes
+
+* bytes() imutable tuples of chars (value from 0 to 255), `b'xyz'`
+* bytearray() mutable list of chars
+* methods:
+  * `count(subsequence)  # number of non-overlaping subsequences`
+  * `decode(encoding="utf-8", errors="ignore")  # return string`
+  * `find(subsequence)  # return index of first subsequence`
+  * `split(separator)  # return list of bytes`
+  * `translate(bytes.maketrans(b'xyz', b'XYZ'), b'aeiou')  # delete chars "aeiou", replace chars x->X, y->Y, z->Z`
+  * `startswith(prefix)`, `endswith(suffix)`
+  * `fromhex(string)`, `hex()`
 
 ### Set
 

@@ -38,8 +38,9 @@ with open('file.txt', mode="rb") as f:
 
 ```python
 import sys
-for line in sys.stdin.readlines():
-    print(line)
+f = sys.stdin
+# rest is like working with files
+lines = f.read().splitlines()
 ```
 ## Writing files
 
