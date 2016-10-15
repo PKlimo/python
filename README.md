@@ -6,4 +6,6 @@ notes for python
   * [Basic](templates/basic.py)
   * [Process text files](templates/process_text_files.py)
 * Examples:
-  * [Rain in Seattle Problem](examples/The_Rain_in_Seattle_problem.py)
+  * [Rain in Seattle Problem](examples/probablity-simulations/The_Rain_in_Seattle_problem.py)
+  * [Aliens](examples/probablity-simulations/alien.py)
+  * [Imap for gmail](examples/imap_gmail.py)
