@@ -2,6 +2,7 @@
 notes for python
 * [Built-ins](builtins.md)
 * [Working with files](files.md)
+* [Python internals](python_internals.md)
 * Templates:
   * [Basic](templates/basic.py)
   * [Process text files](templates/process_text_files.py)

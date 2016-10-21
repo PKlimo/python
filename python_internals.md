@@ -1,6 +1,7 @@
 # Python internals
 ## Urls:
 * [jakevdp basic object overview](https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
+
 ## Basic functions:
 * return address of object in memory (in cpython implemantation) - function id(object)
 
