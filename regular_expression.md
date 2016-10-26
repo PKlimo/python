@@ -57,12 +57,14 @@
 * replacement can be:
     * string
     * \2 - second grup in regexp
+    * function (with one parameter match)
+
+### Examples
 ```python
 import re
 p = re.compile('section{ ( [^}]* ) }', re.VERBOSE)
 p.sub(r'subsection{\1}','section{First} section{second}')
 ```
-    * function (with one parameter match)
 ```python
 import re
 def hexrepl(match):
