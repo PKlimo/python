@@ -11,3 +11,7 @@ notes for python
   * [Rain in Seattle Problem](examples/probablity-simulations/The_Rain_in_Seattle_problem.py)
   * [Aliens](examples/probablity-simulations/alien.py)
   * [Imap for gmail](examples/imap_gmail.py)
+* Interesting projects:
+  * [tqdm](https://github.com/tqdm/tqdm) progress bar
+  * [Elizabeth](https://github.com/lk-geimfari/elizabeth) generating dummy data
+  * [expynent](https://github.com/lk-geimfari/expynent) RegEx patterns
