@@ -15,4 +15,4 @@ notes for python
   * [tqdm](https://github.com/tqdm/tqdm) progress bar
   * [Elizabeth](https://github.com/lk-geimfari/elizabeth) generating dummy data
   * [expynent](https://github.com/lk-geimfari/expynent) RegEx patterns
-  * [sarge](https://bitbucket.org/vinay.sajip/sarge) Calling shell commands (encapsulate subprocess module)
+  * [sarge](https://bitbucket.org/vinay.sajip/sarge) Calling shell commands (encapsulate subprocess module) [youtube](scripts/check_youtube_playlists.py)
