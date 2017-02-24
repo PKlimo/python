@@ -27,16 +27,25 @@ def print_help():
     print('\t --help\t\t print this help message and exit')
 
 
-def send_email(telo):
+def send_email(telo, priloha):
     import smtplib
     from email.mime.text import MIMEText
+    from email.mime.application import MIMEApplication
+    from email.mime.multipart import MIMEMultipart
+
     sender = 'check_youtube_playlist@localhost'
     receiver = ['pklimo@gmail.com']
 
-    msg = MIMEText(telo)
+    msg = MIMEMultipart()
     msg['Subject'] = 'difference in youtube playlist'
     msg['From'] = sender
     msg['To'] = ", ".join(receiver)
+
+    msg.attach(MIMEText(telo))
+    part = MIMEApplication(priloha.encode('ascii'), Name="swing_music.diff")
+    part['Content-Disposition'] = 'attachment; filename="swing_music.diff"'
+    msg.attach(part)
+
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login(credentials.GMAIL_USER, credentials.GMAIL_PASS)
@@ -56,13 +65,14 @@ if __name__ == "__main__":
         print_help()
     else:
         store_file = "/home/peter/Dropbox/youtube/swing_music"
+        text_mailu = """In attachment is enclosed diff file. To apply it, press 'v', select file, press '|' and enter the following command: 'patch -p0 -i -' """
         tmp = download()
         if "--print" in sys.argv[1:]:
             sarge.run("cat " + tmp)
         else:
             diff = sarge.run('diff -uN ' + store_file + ' ' + tmp, stdout = sarge.Capture())
             if diff.returncode != 0:  # compare stored content and downloaded data
-                send_email(diff.stdout.text)
+                send_email(text_mailu, diff.stdout.text)
             sarge.run('touch -a ' + store_file)  # update access time
         sarge.run("rm " + tmp)
 
