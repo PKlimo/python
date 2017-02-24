@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
+import imp
+credentials = imp.load_source("credentials", "/home/peter/credentials.py")
+
 import sys
 import logging
 log_format = '%(levelname)s:%(name)s:%(funcName)s:%(message)s'
@@ -36,8 +39,6 @@ def send_email(telo):
     msg['To'] = ", ".join(receiver)
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    import imp
-    credentials = imp.load_source("credentials", "/home/peter/credentials.py")
     server.login(credentials.GMAIL_USER, credentials.GMAIL_PASS)
     server.sendmail(sender, receiver, msg.as_string())
     server.quit()
@@ -59,7 +60,7 @@ if __name__ == "__main__":
         if "--print" in sys.argv[1:]:
             sarge.run("cat " + tmp)
         else:
-            diff = sarge.run('diff ' + store_file + ' ' + tmp, stdout = sarge.Capture())
+            diff = sarge.run('diff -uN ' + store_file + ' ' + tmp, stdout = sarge.Capture())
             if diff.returncode != 0:  # compare stored content and downloaded data
                 send_email(diff.stdout.text)
             sarge.run('touch -a ' + store_file)  # update access time
