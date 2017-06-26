@@ -10,6 +10,7 @@ notes for python
 * Examples:
   * [Rain in Seattle Problem](examples/probablity-simulations/The_Rain_in_Seattle_problem.py)
   * [Aliens](examples/probablity-simulations/alien.py)
+  * [Code lock](examples/code_lock_puzzle.py)
   * [Imap for gmail](examples/imap_gmail.py) and [Smtp for gmail](examples/smtp_gmail.py)
   * [check and download youtube playlist](examples/check_youtube_playlists.py)
 * Interesting projects:
